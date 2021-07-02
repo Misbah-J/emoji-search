@@ -30,6 +30,9 @@ pipeline {
                 elif [[ $GIT_BRANCH == "misbah-prod" ]]
                 then
                     kubectl set image deployment/misbah-new-dep nginx=misbah012/emoji-search:$BUILD_ID-$BRANCH_NAME -n misbah-prod
+                    elif [[ $GIT_BRANCH == "hotfix"* ]]
+                then
+                    kubectl set image deployment/jenkins-app nginx=riteshk03/emoji-search:$BUILD_ID-$BRANCH_NAME -n misbah-prod
                    
                 fi         
             '''
