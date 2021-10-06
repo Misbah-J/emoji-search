@@ -2,7 +2,7 @@ pipeline {
   environment {
     registry = "minfy/sample-app"
     registryCredential = 'dockerhub'
-    KUBECONFIG="$JENKINS_HOME/.kube/config2"
+   // KUBECONFIG="$JENKINS_HOME/.kube/config2"
   }
   agent any
   stages {
